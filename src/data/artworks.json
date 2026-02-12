@@ -1,0 +1,130 @@
+{
+  "artworks": [
+    {
+      "slug": "kahlo-self-portrait-braided-hair",
+      "title": "Self-Portrait with Braided Hair",
+      "year": "1938",
+      "artist": "Frida Kahlo",
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "featured": false,
+      "image": {
+        "alt": "Frida Kahlo — Self-Portrait with Braided Hair",
+        "src": "/images/external/img1.jpg",
+        "fallback": "/images/external/img1.jpg",
+        "blurPlaceholder": "/images/placeholders/portrait.svg"
+      },
+      "description": "an intimate, emotionally restrained portrait expressing identity, resilience, and personal symbolism through direct gaze and minimal composition",
+      "inquiryEmail": "studio@atelierstella.com",
+      "tags": [
+        "Portrait",
+        "Frida Kahlo"
+      ]
+    },
+    {
+      "slug": "millais-ophelia",
+      "title": "Ophelia",
+      "year": "1851–1852",
+      "artist": "John Everett Millais",
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "featured": false,
+      "image": {
+        "alt": "John Everett Millais — Ophelia",
+        "src": "/images/external/img2.jpg",
+        "fallback": "/images/external/img2.jpg",
+        "blurPlaceholder": "/images/placeholders/portrait.svg"
+      },
+      "description": "a romantic pre-Raphaelite masterpiece portraying tragic beauty, nature, and poetic melancholy through detailed realism and symbolic flora",
+      "inquiryEmail": "studio@atelierstella.com",
+      "tags": [
+        "Pre-Raphaelite",
+        "Ophelia"
+      ]
+    },
+    {
+      "slug": "fragonard-the-swing",
+      "title": "The Swing",
+      "year": "1767",
+      "artist": "Jean-Honoré Fragonard",
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "featured": false,
+      "image": {
+        "alt": "Jean-Honoré Fragonard — The Swing",
+        "src": "/images/external/img3.jpg",
+        "fallback": "/images/external/img3.jpg",
+        "blurPlaceholder": "/images/placeholders/portrait.svg"
+      },
+      "description": "a rococo-era painting capturing playful sensuality, motion, and aristocratic fantasy in a lush garden setting",
+      "inquiryEmail": "studio@atelierstella.com",
+      "tags": [
+        "Rococo",
+        "Fragonard"
+      ]
+    },
+    {
+      "slug": "monet-japanese-bridge",
+      "title": "The Japanese Bridge",
+      "year": "1899",
+      "artist": "Claude Monet",
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "featured": false,
+      "image": {
+        "alt": "Claude Monet — The Japanese Bridge",
+        "src": "/images/external/img4.jpeg",
+        "fallback": "/images/external/img4.jpeg",
+        "blurPlaceholder": "/images/placeholders/portrait.svg"
+      },
+      "description": "an impressionist exploration of light, reflection, and tranquility using layered color and soft brushwork inspired by Monet’s Giverny garden",
+      "inquiryEmail": "studio@atelierstella.com",
+      "tags": [
+        "Impressionism",
+        "Monet"
+      ]
+    },
+    {
+      "slug": "vermeer-girl-with-pearl-earring",
+      "title": "Girl with a Pearl Earring",
+      "year": "1665",
+      "artist": "Johannes Vermeer",
+      "medium": "Oil on canvas",
+      "dimensions": "",
+      "featured": false,
+      "image": {
+        "alt": "Johannes Vermeer — Girl with a Pearl Earring",
+        "src": "/images/external/img5.jpg",
+        "fallback": "/images/external/img5.jpg",
+        "blurPlaceholder": "/images/placeholders/portrait.svg"
+      },
+      "description": "a baroque masterpiece known for its luminous skin tones, intimate gaze, and masterful use of light and shadow",
+      "inquiryEmail": "studio@atelierstella.com",
+      "tags": [
+        "Baroque",
+        "Vermeer"
+      ]
+    },
+    {
+      "slug": "munch-the-scream",
+      "title": "The Scream",
+      "year": "1893",
+      "artist": "Edvard Munch",
+      "medium": "Oil, tempera, and pastel on cardboard",
+      "dimensions": "",
+      "featured": false,
+      "image": {
+        "alt": "Edvard Munch — The Scream",
+        "src": "/images/external/img6.jpg",
+        "fallback": "/images/external/img6.jpg",
+        "blurPlaceholder": "/images/placeholders/portrait.svg"
+      },
+      "description": "an expressionist icon symbolizing existential anxiety, inner turmoil, and emotional intensity through distorted form and color",
+      "inquiryEmail": "studio@atelierstella.com",
+      "tags": [
+        "Expressionism",
+        "Munch"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <%- include('../partials/head', { meta }) %>
+</head>
+
+<body class="bg-ink text-zinc-100 antialiased selection:bg-amber-200/30 selection:text-zinc-50">
+  <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white"
+    href="#main">
+    Skip to content
+  </a>
+
+  <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <section class="relative min-h-[92vh] overflow-hidden">
+        <div class="absolute inset-0">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="absolute inset-0 bg-black/25"></div>
+          <div class="absolute inset-0 vignette" aria-hidden="true"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-6xl px-5 py-20 sm:py-28 flex flex-col items-center text-center">
+          <div class="max-w-3xl reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-200/80">A QUIET EXHIBITION</p>
+            <h1 class="mt-6 font-display text-4xl sm:text-6xl leading-[1.05] text-zinc-50">
+              Art deserves space to breathe—where presence speaks louder than presentation.
+            </h1>
+            <p class="mt-6 text-base sm:text-lg text-zinc-200/85 leading-relaxed">
+              Beneath a distant echo of Michelangelo’s ceiling, this gallery offers a dark, quiet stage for light.
+              Wander through curated rooms, archival stories, and an antique-inspired world map of museums.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+              <a href="/gallery" class="btn-primary">Enter the Gallery</a>
+              <a href="#featured" class="btn-ghost">Featured Works</a>
+            </div>
+          </div>
+
+          <div class="mt-20 max-w-2xl reveal">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 text-sm text-zinc-200/85">
+              <div>
+                <div class="font-display text-lg text-zinc-100">Welcome to the Gallery</div>
+                <p class="mt-2 leading-relaxed">
+                  Step into a thoughtfully curated space where light, shadow, and stillness frame each work with
+                  intention. Allow yourself to slow down and experience art without distraction.
+                </p>
+              </div>
+              <div>
+                <div class="font-display text-lg text-zinc-100">A Quiet Viewing Experience</div>
+                <p class="mt-2 leading-relaxed">
+                  Gentle transitions and unhurried reveals create a calm, contemplative space designed for focus,
+                  reflection, and uninterrupted appreciation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured" class="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <div class="flex items-end justify-between gap-6">
+          <div class="max-w-xl reveal">
+            <h2 class="font-display text-3xl sm:text-4xl text-zinc-50">Featured works</h2>
+            <p class="mt-3 text-zinc-300/80 leading-relaxed">
+              A balanced selection—hover to reveal the title, year, and medium.
+            </p>
+          </div>
+          <a class="hidden sm:inline text-sm text-zinc-200/90 hover:text-zinc-50 transition reveal" href="/gallery">
+            View full gallery →
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <% for (const a of (featured || [])) { %>
+            <a href="/gallery/<%= a.slug %>" class="art-card group reveal" aria-label="View artwork: <%= a.title %>">
+              <div class="art-card-media">
+                <picture>
+                  <source srcset="<%= a.image?.src || '' %>" type="image/webp" />
+                  <img src="<%= a.image?.fallback || a.image?.src || '' %>" alt="<%= a.image?.alt || a.title %>"
+                    loading="lazy" decoding="async" class="art-card-img"
+                    onerror="this.onerror=null; this.src='<%= a.image?.blurPlaceholder || '/images/placeholders/portrait.svg' %>'" />
+                </picture>
+              </div>
+              <div class="art-card-overlay" aria-hidden="true">
+                <div class="art-card-meta">
+                  <div class="font-display text-xl text-zinc-50">
+                    <%= a.title %>
+                  </div>
+                  <div class="mt-1 text-sm text-zinc-200/85">
+                    <%= a.year %> · <%= a.medium %>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <% } %>
+        </div>
+      </section>
+
+      <section class="border-t border-white/10 bg-black/10">
+        <div class="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+          <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <div class="lg:col-span-6 reveal">
+              <h2 class="font-display text-3xl sm:text-4xl text-zinc-50">
+                Explore the Museum Map
+              </h2>
+              <p class="mt-4 text-zinc-300/80 leading-relaxed">
+                Navigate an interactive world map to discover museum locations across the globe. Each destination
+                invites you to explore its story, collection, and cultural presence.
+              </p>
+              <div class="mt-8 flex gap-4">
+                <a href="/map" class="btn-primary">Explore the Map</a>
+                <a href="/about" class="btn-ghost">Meet the Artist</a>
+              </div>
+            </div>
+            <div class="lg:col-span-6 reveal">
+              <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+                <p class="text-xs tracking-[0.35em] text-zinc-300/70">MAP EXPERIENCE NOTES</p>
+                <ul class="mt-4 grid gap-3 text-sm text-zinc-200/85">
+                  <li><span class="text-zinc-100">Navigation</span> — Elegant markers and intuitive zoom</li>
+                  <li><span class="text-zinc-100">Clarity</span> — Layered details with smooth transitions</li>
+                  <li><span class="text-zinc-100">Accessibility</span> — Clear labels, keyboard navigation, focus
+                    visibility</li>
+                  <li><span class="text-zinc-100">Atmosphere</span> — Subtle depth, soft tones, and refined cartographic
+                    textures</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

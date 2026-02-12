@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white" href="#main">
+      Skip to content
+    </a>
+    <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <section class="page-hero">
+        <div class="relative mx-auto max-w-6xl px-5 py-14 sm:py-16">
+          <div class="max-w-2xl reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-200/70">GALLERY</p>
+            <h1 class="mt-4 font-display text-4xl sm:text-5xl text-zinc-50 leading-[1.05]">
+              A room for looking.
+            </h1>
+            <p class="mt-4 text-zinc-300/80 leading-relaxed">
+              Hover for details. Enter a work to view it full screen with structured information and an inquiry option to Explore at your own pace. Select a work to view it in full screen, with details and the option to connect.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-14 sm:py-16">
+        <div class="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <% for (const a of (artworks || [])) { %>
+          <a href="/gallery/<%= a.slug %>" class="art-card group reveal" aria-label="View artwork: <%= a.title %>">
+            <div class="art-card-media">
+              <picture>
+                <source srcset="<%= a.image?.src || '' %>" type="image/webp" />
+                <img
+                  src="<%= a.image?.fallback || a.image?.src || '' %>"
+                  alt="<%= a.image?.alt || a.title %>"
+                  loading="lazy"
+                  decoding="async"
+                  class="art-card-img"
+                  onerror="this.onerror=null; this.src='<%= a.image?.blurPlaceholder || '/images/placeholders/portrait.svg' %>'"
+                />
+              </picture>
+            </div>
+            <div class="art-card-overlay" aria-hidden="true">
+              <div class="art-card-meta">
+                <div class="font-display text-xl text-zinc-50"><%= a.title %></div>
+                <div class="mt-1 text-sm text-zinc-200/85"><%= a.year %> · <%= a.medium %></div>
+              </div>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+

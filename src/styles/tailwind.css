@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-ink text-zinc-100;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(251, 191, 36, 0.55);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm text-zinc-50 shadow-soft backdrop-blur-md transition;
+    background-image: linear-gradient(135deg, #050609, #7c1a1a, #c7a45a);
+    background-size: 180% 180%;
+    border: 1px solid rgba(199, 164, 90, 0.55);
+  }
+
+  .btn-primary:hover {
+    background-position: 100% 0%;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm text-zinc-100 transition;
+    border-radius: 999px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(148, 163, 184, 0.4);
+    background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.92));
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(199, 164, 90, 0.7);
+    background-image: linear-gradient(135deg, rgba(5, 6, 9, 0.98), rgba(124, 26, 26, 0.95));
+  }
+
+  .vignette {
+    background: radial-gradient(1200px 700px at 50% 30%, transparent 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.78) 100%);
+  }
+
+  .hero-bg {
+    background-image:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.6)),
+      url("/images/external/img8.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.1) contrast(1.02);
+    transform: scale(1.01);
+  }
+
+  .art-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-soft;
+  }
+
+  .art-card-media {
+    @apply aspect-[4/5] w-full overflow-hidden bg-black/40;
+  }
+
+  .art-card-img {
+    @apply h-full w-full object-cover opacity-90 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-100;
+  }
+
+  .art-card-overlay {
+    @apply pointer-events-none absolute inset-0 flex items-end opacity-0 transition duration-500 group-hover:opacity-100;
+    background-image: linear-gradient(180deg,
+        rgba(5, 6, 9, 0.0),
+        rgba(5, 6, 9, 0.35),
+        rgba(124, 26, 26, 0.6),
+        rgba(0, 0, 0, 0.92));
+  }
+
+  .art-card-meta {
+    @apply p-5;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 900ms ease, transform 900ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .page-hero {
+    @apply relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-lux-charcoal via-black/90 to-black;
+  }
+
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(800px 500px at 20% 10%, rgba(245, 158, 11, 0.09), transparent 60%),
+      radial-gradient(1000px 600px at 70% 20%, rgba(255, 255, 255, 0.06), transparent 60%);
+    pointer-events: none;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/20 bg-white/10 shadow-soft backdrop-blur-md;
+  }
+
+  /* Leaflet museum marker (glassmorphism card) */
+  .museum-marker {
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .museum-card {
+    width: 280px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(20, 18, 16, 0.35);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 14px 14px 12px;
+    transform: translateY(0);
+    transition: opacity 400ms ease, transform 400ms ease;
+  }
+
+  .museum-card.is-hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+  }
+
+  .museum-title {
+    font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+    font-size: 18px;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .museum-sub {
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .museum-focus {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .museum-link {
+    margin-top: 10px;
+    font-size: 12px;
+    color: rgba(243, 226, 191, 0.8);
+  }
+
+  /* Antique map overlays */
+  .parchment-texture {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(217, 182, 123, 0.18), transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(201, 155, 86, 0.14), transparent 48%),
+      radial-gradient(circle at 55% 20%, rgba(255, 255, 255, 0.06), transparent 55%),
+      linear-gradient(0deg, rgba(47, 32, 20, 0.32), rgba(47, 32, 20, 0.32));
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+  }
+
+  .map-filter {
+    background: linear-gradient(180deg, rgba(11, 10, 9, 0.18), rgba(11, 10, 9, 0.55));
+    mix-blend-mode: multiply;
+  }
+
+  .antique-border {
+    border: 1px solid rgba(243, 226, 191, 0.22);
+    box-shadow: inset 0 0 0 2px rgba(181, 130, 62, 0.16), inset 0 0 0 10px rgba(0, 0, 0, 0.18);
+    border-radius: 16px;
+  }
+
+  .compass-rose {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    opacity: 0.85;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(243, 226, 191, 0.26), transparent 55%),
+      conic-gradient(from 0deg,
+        rgba(243, 226, 191, 0.0),
+        rgba(243, 226, 191, 0.22),
+        rgba(243, 226, 191, 0.0),
+        rgba(243, 226, 191, 0.18),
+        rgba(243, 226, 191, 0.0));
+    border: 1px solid rgba(243, 226, 191, 0.22);
+    border-radius: 999px;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.35));
+  }
+
+  .compass-rose::after {
+    content: "N";
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+    color: rgba(243, 226, 191, 0.9);
+    letter-spacing: 0.2em;
+  }
+
+  .title-cartouche {
+    width: 260px;
+    border-radius: 18px;
+    border: 1px solid rgba(243, 226, 191, 0.24);
+    background: rgba(47, 32, 20, 0.28);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .cartouche-inner {
+    padding: 12px 14px 10px;
+  }
+
+  .cartouche-title {
+    font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .cartouche-sub {
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(243, 226, 191, 0.7);
+  }
+}

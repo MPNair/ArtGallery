@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1125" viewBox="0 0 900 1125">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1816"/>
+      <stop offset="1" stop-color="#0b0a09"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="20%" r="80%">
+      <stop offset="0" stop-color="#b5823e" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1125" fill="url(#bg)"/>
+  <rect width="900" height="1125" fill="url(#glow)"/>
+  <g opacity="0.55">
+    <circle cx="460" cy="470" r="165" fill="#ffffff" fill-opacity="0.06"/>
+    <rect x="260" y="685" width="400" height="260" rx="28" fill="#ffffff" fill-opacity="0.05"/>
+  </g>
+  <text x="60" y="1040" fill="#f3e2bf" fill-opacity="0.65" font-family="serif" font-size="42">Add artwork image</text>
+  <text x="60" y="1090" fill="#ffffff" fill-opacity="0.35" font-family="sans-serif" font-size="24">/public/images/artworks/*.webp</text>
+</svg>
+

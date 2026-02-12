@@ -1,0 +1,18 @@
+{
+  "name": "Mp Nair",
+  "role": "Curator & Keeper of Quiet Light",
+  "portrait": {
+    "alt": "Curator Mp Nair standing in a dimly lit gallery, surrounded by paintings and soft reflections.",
+    "src": "/images/external/img7.png",
+    "fallback": "/images/external/img7.png",
+    "blurPlaceholder": "/images/placeholders/portrait.svg"
+  },
+  "bioLead": "Mp Nair curates exhibitions as if arranging dusk: carefully, patiently, with an ear tuned to the smallest tremor of light on a surface.",
+  "bioPoetic": [
+    "Born between cities and coastlines, Nair learned to read museums the way others read weather—by the temperature of silence in a room.",
+    "She believes a gallery is not a corridor of masterpieces, but a temporary country where every work negotiates its own horizon.",
+    "Wall texts are written like letters, not labels; each exhibition is paced like a piece of chamber music: a prelude, a hush, a long sustaining note.",
+    "Her practice is devoted to hospitality of the eye—giving visitors just enough distance to feel unhurried, and just enough guidance to feel held."
+  ],
+  "statement": "I do not arrange artworks; I arrange conditions for looking. A good exhibition does not shout its thesis. It stands very still and lets the works speak to one another until the visitor overhears a conversation they did not know they needed."
+}

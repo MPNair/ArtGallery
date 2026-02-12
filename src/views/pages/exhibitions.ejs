@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white" href="#main">
+      Skip to content
+    </a>
+    <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <section class="page-hero">
+        <div class="relative mx-auto max-w-6xl px-5 py-14 sm:py-16">
+          <div class="max-w-3xl reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-200/70">EXHIBITIONS</p>
+            <h1 class="mt-4 font-display text-4xl sm:text-5xl text-zinc-50 leading-[1.05]">
+              Curated seasons of attention.
+            </h1>
+            <p class="mt-4 text-zinc-300/80 leading-relaxed">
+              A calendar of exhibitions conceived by Mp Nair as quiet seasons of looking—each anchored to a city, a tempo, and a single guiding question.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-14 sm:py-16">
+        <div class="grid gap-8 md:grid-cols-2">
+          <% for (const ex of (exhibitions || [])) { %>
+          <article class="rounded-2xl border border-white/10 bg-gradient-to-b from-lux-charcoal-soft/90 via-black/90 to-black/95 p-7 shadow-soft reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-300/70"><%= ex.dates %></p>
+            <h2 class="mt-3 font-display text-3xl text-zinc-50"><%= ex.title %></h2>
+            <p class="mt-2 text-sm text-zinc-300/80"><%= ex.location %></p>
+
+            <% if (ex.theme) { %>
+            <p class="mt-3 text-xs uppercase tracking-[0.3em] text-lux-gold/80">THEME</p>
+            <p class="mt-2 text-sm text-zinc-200/85 leading-relaxed"><%= ex.theme %></p>
+            <% } %>
+
+            <p class="mt-5 text-zinc-300/85 leading-relaxed"><%= ex.summary %></p>
+
+            <div class="mt-6">
+              <p class="text-xs tracking-[0.35em] text-zinc-300/70">HIGHLIGHTS</p>
+              <ul class="mt-3 grid gap-2 text-sm text-zinc-200/85">
+                <% for (const h of (ex.highlights || [])) { %>
+                <li class="flex items-center gap-2">
+                  <span class="h-1.5 w-1.5 rounded-full bg-lux-gold/70"></span>
+                  <span><%= h %></span>
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </article>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased">
+    <main class="min-h-screen grid place-items-center px-5">
+      <div class="max-w-xl text-center">
+        <p class="text-xs tracking-[0.35em] text-zinc-300/70">404</p>
+        <h1 class="mt-4 font-display text-4xl text-zinc-50">Not found</h1>
+        <p class="mt-4 text-zinc-300/80 leading-relaxed">
+          The page <span class="text-zinc-200"><%= path %></span> does not exist.
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-4">
+          <a class="btn-primary" href="/">Go home</a>
+          <a class="btn-ghost" href="/gallery">Gallery</a>
+        </div>
+      </div>
+    </main>
+    <script src="/assets/js/app.js" defer></script>
+  </body>
+</html>
+

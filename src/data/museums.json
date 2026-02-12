@@ -1,0 +1,65 @@
+{
+  "museums": [
+    {
+      "id": "uffizi",
+      "name": "Galleria degli Uffizi",
+      "city": "Florence",
+      "country": "Italy",
+      "lat": 43.7687,
+      "lng": 11.255,
+      "focus": "Renaissance masters, Italian painting",
+      "website": "https://www.uffizi.it/en"
+    },
+    {
+      "id": "louvre",
+      "name": "Musée du Louvre",
+      "city": "Paris",
+      "country": "France",
+      "lat": 48.8606,
+      "lng": 2.3376,
+      "focus": "Classical antiquity to 19th century",
+      "website": "https://www.louvre.fr/en"
+    },
+    {
+      "id": "met",
+      "name": "The Metropolitan Museum of Art",
+      "city": "New York",
+      "country": "USA",
+      "lat": 40.7794,
+      "lng": -73.9632,
+      "focus": "Global collection, encyclopedic",
+      "website": "https://www.metmuseum.org/"
+    },
+    {
+      "id": "british-museum",
+      "name": "The British Museum",
+      "city": "London",
+      "country": "United Kingdom",
+      "lat": 51.5194,
+      "lng": -0.127,
+      "focus": "World cultures, artifacts, prints",
+      "website": "https://www.britishmuseum.org/"
+    },
+    {
+      "id": "rijksmuseum",
+      "name": "Rijksmuseum",
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "lat": 52.36,
+      "lng": 4.8852,
+      "focus": "Dutch masters, decorative arts",
+      "website": "https://www.rijksmuseum.nl/en"
+    },
+    {
+      "id": "prado",
+      "name": "Museo Nacional del Prado",
+      "city": "Madrid",
+      "country": "Spain",
+      "lat": 40.4138,
+      "lng": -3.6921,
+      "focus": "European painting (12th–19th c.)",
+      "website": "https://www.museodelprado.es/en"
+    }
+  ]
+}
+

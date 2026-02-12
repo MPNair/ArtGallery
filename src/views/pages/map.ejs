@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <script src="/assets/js/map.js" defer></script>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white" href="#main">
+      Skip to content
+    </a>
+    <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <section class="mx-auto max-w-6xl px-5 py-10 sm:py-12">
+        <h1 class="sr-only">World museums map</h1>
+        <p class="sr-only">
+          An interactive antique-style map showing a single highlighted museum for each country. Zoom in to reveal
+          detailed cards.
+        </p>
+        <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-parchment-900/40 shadow-soft">
+          <div class="absolute inset-0 parchment-texture pointer-events-none" aria-hidden="true"></div>
+          <div class="absolute inset-0 antique-border pointer-events-none" aria-hidden="true"></div>
+          <div class="absolute inset-0 map-filter pointer-events-none" aria-hidden="true"></div>
+
+          <div
+            id="antiqueMap"
+            data-museums="<%= JSON.stringify(museums || []) %>"
+            class="h-[70vh] min-h-[520px] w-full"
+            role="application"
+            aria-label="Interactive museum map"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+

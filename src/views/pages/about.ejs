@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white" href="#main">
+      Skip to content
+    </a>
+    <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <section class="page-hero">
+        <div class="relative mx-auto max-w-6xl px-5 py-14 sm:py-16">
+          <div class="max-w-3xl reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-200/70">ABOUT</p>
+            <h1 class="mt-4 font-display text-4xl sm:text-5xl text-zinc-50 leading-[1.05]">
+              <%= artist?.name || 'The Artist' %>
+            </h1>
+            <p class="mt-4 text-zinc-300/80 leading-relaxed">
+              <%= artist?.bioLead || '' %>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-14 sm:py-16">
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-start">
+          <div class="lg:col-span-5 reveal">
+            <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/30 shadow-soft">
+              <picture>
+                <source srcset="<%= artist?.portrait?.src || '' %>" type="image/webp" />
+                <img
+                  src="<%= artist?.portrait?.fallback || artist?.portrait?.src || '' %>"
+                  alt="<%= artist?.portrait?.alt || artist?.name || 'Artist portrait' %>"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto object-cover"
+                  onerror="this.onerror=null; this.src='<%= artist?.portrait?.blurPlaceholder || '/images/placeholders/portrait.svg' %>'"
+                />
+              </picture>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-300/70"><%= artist?.role || 'Story' %></p>
+            <h2 class="mt-4 font-display text-3xl sm:text-4xl text-zinc-50 leading-[1.05]">
+              A curated story, told with restraint.
+            </h2>
+
+            <div class="mt-6 space-y-5 text-zinc-300/85 leading-relaxed">
+              <% for (const line of (artist?.bioPoetic || [])) { %>
+              <p class="text-base"><%= line %></p>
+              <% } %>
+            </div>
+
+            <div class="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+              <p class="text-xs tracking-[0.35em] text-zinc-300/70">CURATORIAL PHILOSOPHY</p>
+              <blockquote class="mt-4 font-display text-2xl sm:text-3xl text-zinc-50 leading-[1.2]">
+                “<%= artist?.statement || '' %>”
+              </blockquote>
+            </div>
+
+            <div class="mt-10">
+              <a href="/gallery" class="btn-primary">View works</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+

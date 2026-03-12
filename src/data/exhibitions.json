@@ -1,0 +1,74 @@
+{
+  "exhibitions": [
+    {
+      "id": "thresholds-of-light",
+      "title": "Thresholds of Light",
+      "dates": "October 2024 — January 2025",
+      "location": "Sala Aurea, Florence",
+      "theme": "Chiaroscuro and the architecture of stillness",
+      "summary": "An intimate survey of works that treat shadow as a structural material—where the brightest point in the room is often not the canvas, but the air around it.",
+      "highlights": [
+        "A corridor of single-light sources, each painting accompanied only by a line of text and a chair.",
+        "A chamber devoted to half-finished fresco studies, hung at eye level to reveal decision-making marks.",
+        "A closing room of contemporary responses to Baroque light, curated in near darkness."
+      ],
+      "order": 1
+    },
+    {
+      "id": "cartographies-of-silence",
+      "title": "Cartographies of Silence",
+      "dates": "March 2025 — July 2025",
+      "location": "Riverside Pavilion, London",
+      "theme": "Mapping absence, distance, and the spaces between cities",
+      "summary": "Large-scale works on paper, embossed metal, and layered textiles that redraw the world not by borders and coastlines, but by the routes of memory and migration.",
+      "highlights": [
+        "An installation of suspended vellum maps whose inked shorelines blur into stitched red thread.",
+        "A listening room where visitors hear recorded footsteps from museum floors around the world.",
+        "A series of nocturnes in graphite and gold leaf, charting cities only by their reflected light."
+      ],
+      "order": 2
+    },
+    {
+      "id": "ceiling-of-breath",
+      "title": "Ceiling of Breath",
+      "dates": "September 2025 — February 2026",
+      "location": "Galleria del Cielo, Rome",
+      "theme": "Reverent echoes of fresco ceilings and the weight of the sky",
+      "summary": "A dialogue with historic ceiling paintings—from the Sistine Chapel to lesser-known chapels—through photographic studies, site-responsive works, and contemporary commissions hung low to invite contemplation.",
+      "highlights": [
+        "High-resolution ceiling photographs printed on silk and gently moving with the air of the gallery.",
+        "A mirrored floor room where visitors look up and down to experience painted heavens as landscapes.",
+        "A series of small oil studies that isolate hands, folds of drapery, and fragments of sky from canonical frescoes."
+      ],
+      "order": 3
+    },
+    {
+      "id": "gilded-frequencies",
+      "title": "Gilded Frequencies",
+      "dates": "May 2026 — September 2026",
+      "location": "Haus am Spiegel, Berlin",
+      "theme": "Gold leaf, reflection, and the choreography of viewers in space",
+      "summary": "An exhibition that treats gold not as ornament but as a way of scoring how the body moves through a room—the shimmer marking where attention gathers and diverges.",
+      "highlights": [
+        "A suite of monochrome paintings whose only variation is the location of a single gold interruption.",
+        "Mirrored plinths holding small, intensely detailed works lit at low levels to encourage slow viewing.",
+        "A live mapping of visitor movement translated into shifting bands of projected color on the walls."
+      ],
+      "order": 4
+    },
+    {
+      "id": "night-crossings",
+      "title": "Night Crossings",
+      "dates": "Planned: November 2026 — March 2027",
+      "location": "International Travelling Exhibition — Tokyo, New York, Lisbon",
+      "theme": "Harbors, thresholds, and the luminous edge between departure and return",
+      "summary": "A forthcoming international programme bringing together artists whose work lingers on ports, stations, and liminal architectures—places where strangers briefly share the same horizon.",
+      "highlights": [
+        "Commissioned light installations responding to each city’s specific night sky and waterfront.",
+        "Archival material from historic passenger terminals, reframed as sculptural objects.",
+        "Programming that pairs late-night openings with live readings, music, and quiet gatherings."
+      ],
+      "order": 5
+    }
+  ]
+}

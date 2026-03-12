@@ -1,0 +1,76 @@
+<header class="fixed inset-x-0 top-0 z-50">
+  <nav
+    class="bg-gradient-to-b from-lux-charcoal/95 via-black/90 to-black/80 backdrop-blur-xl border-b border-lux-gold/35"
+    aria-label="Primary"
+  >
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/" class="group inline-flex items-center gap-2">
+          <span
+            class="font-display text-lg tracking-wide text-zinc-100 group-hover:text-lux-gold transition-colors"
+            >ArtGallery</span
+          >
+          <span class="hidden sm:inline text-xs text-zinc-300/80 tracking-[0.3em]"
+            >EXHIBITION</span
+          >
+        </a>
+
+        <button
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-zinc-100 hover:bg-white/10 transition"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          data-mobile-toggle
+        >
+          Menu
+        </button>
+
+        <ul class="hidden md:flex items-center gap-7 text-sm text-zinc-200/90">
+          <% for (const item of nav || []) { %>
+          <li>
+            <a
+              href="<%= item.href %>"
+              class="hover:text-lux-gold transition-colors"
+              ><%= item.label %></a
+            >
+          </li>
+          <% } %>
+          <li>
+            <a
+              href="/map"
+              class="rounded-full border border-lux-gold/50 bg-gradient-to-r from-lux-charcoal-soft via-black to-lux-cherry px-4 py-2 text-zinc-50 shadow-soft hover:from-black hover:via-lux-cherry hover:to-lux-gold transition"
+              >Map</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden pb-4"
+        role="dialog"
+        aria-label="Mobile menu"
+      >
+        <ul class="grid gap-2 text-sm text-zinc-200/90">
+          <% for (const item of nav || []) { %>
+          <li>
+            <a
+              href="<%= item.href %>"
+              class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-zinc-50 transition"
+              ><%= item.label %></a
+            >
+          </li>
+          <% } %>
+          <li>
+            <a
+              href="/map"
+              class="block rounded-md px-3 py-2 hover:bg-white/5 hover:text-zinc-50 transition"
+              >Map</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+

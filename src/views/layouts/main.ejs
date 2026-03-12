@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased selection:bg-amber-200/30 selection:text-zinc-50">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white" href="#main">
+      Skip to content
+    </a>
+
+    <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <%- body %>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+

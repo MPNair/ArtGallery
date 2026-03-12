@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <%- include('../partials/head', { meta }) %>
+  </head>
+  <body class="bg-ink text-zinc-100 antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white" href="#main">
+      Skip to content
+    </a>
+    <%- include('../partials/nav', { nav }) %>
+
+    <main id="main" class="pt-16">
+      <section class="page-hero">
+        <div class="relative mx-auto max-w-6xl px-5 py-14 sm:py-16">
+          <div class="max-w-3xl reveal">
+            <p class="text-xs tracking-[0.35em] text-zinc-200/70">CONTACT</p>
+            <h1 class="mt-4 font-display text-4xl sm:text-5xl text-zinc-50 leading-[1.05]">
+              Inquiries & private viewings
+            </h1>
+            <p class="mt-4 text-zinc-300/80 leading-relaxed">
+              Send an inquiry for acquisitions, exhibitions, or collaborations. This demo renders a thank-you state (no email/database configured).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-5 py-14 sm:py-16">
+        <% if (sent) { %>
+        <div class="rounded-2xl border border-white/10 bg-gradient-to-b from-lux-charcoal-soft/95 via-black to-black p-8 shadow-soft reveal">
+          <p class="text-xs tracking-[0.35em] text-zinc-300/70">CONFIRMATION</p>
+          <h2 class="mt-4 font-display text-3xl sm:text-4xl text-zinc-50">Your request has been received.</h2>
+          <p class="mt-3 text-zinc-300/85 leading-relaxed">
+            Thank you for reaching out. A member of the ArtGallery team will respond within 1–2 business days regarding
+            ticket availability or your professional inquiry.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="btn-primary" href="/gallery">Return to gallery</a>
+            <a class="btn-ghost" href="/exhibitions">View current exhibitions</a>
+          </div>
+        </div>
+        <% } else { %>
+        <div class="grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-7 space-y-10 reveal">
+            <section aria-label="Ticket booking">
+              <div class="rounded-2xl border border-white/10 bg-gradient-to-b from-lux-charcoal-soft/95 via-black/95 to-black p-7 shadow-soft">
+                <p class="text-xs tracking-[0.35em] text-zinc-300/70">TICKET BOOKING</p>
+                <h2 class="mt-4 font-display text-2xl sm:text-3xl text-zinc-50">
+                  Reserve timed-entry tickets
+                </h2>
+                <p class="mt-3 text-sm text-zinc-300/85 leading-relaxed">
+                  Book a visit for the current season’s exhibitions. This form renders a confirmation state only—no payment
+                  or external booking system is connected in this demo.
+                </p>
+                <form method="post" action="/contact" class="mt-6 grid gap-4" aria-label="Ticket booking form">
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="booking-name">NAME</label>
+                      <input
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                        id="booking-name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="booking-email">EMAIL</label>
+                      <input
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                        id="booking-email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="grid gap-4 sm:grid-cols-3">
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="visit-date">DATE</label>
+                      <input
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                        id="visit-date"
+                        name="visitDate"
+                        type="date"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="visit-time">TIME</label>
+                      <select
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 focus:border-lux-gold/60"
+                        id="visit-time"
+                        name="visitTime"
+                        required
+                      >
+                        <option value="">Select a slot</option>
+                        <option value="10:00">10:00 – 12:00</option>
+                        <option value="13:00">13:00 – 15:00</option>
+                        <option value="17:00">17:00 – 19:00</option>
+                        <option value="20:00">20:00 – 22:00 (late viewing)</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="tickets">TICKETS</label>
+                      <input
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                        id="tickets"
+                        name="tickets"
+                        type="number"
+                        min="1"
+                        max="8"
+                        value="2"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="booking-notes">NOTES</label>
+                    <textarea
+                      class="mt-2 min-h-[100px] w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                      id="booking-notes"
+                      name="message"
+                      placeholder="Add accessibility needs, preferred exhibitions, or guest details."
+                    ></textarea>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <button class="btn-primary" type="submit">Request tickets</button>
+                    <p class="text-xs text-zinc-300/70">You’ll receive a confirmation by email.</p>
+                  </div>
+                </form>
+              </div>
+            </section>
+
+            <section aria-label="Professional inquiries">
+              <div class="rounded-2xl border border-white/10 bg-black/40 p-7 shadow-soft">
+                <p class="text-xs tracking-[0.35em] text-zinc-300/70">PROFESSIONAL INQUIRIES</p>
+                <h2 class="mt-4 font-display text-2xl sm:text-3xl text-zinc-50">
+                  Curatorial, institutional & press
+                </h2>
+                <p class="mt-3 text-sm text-zinc-300/85 leading-relaxed">
+                  Interested in acquiring a work, planning an exhibition, or collaborating? Reach out—we’d be glad to hear from you.
+                </p>
+                <form method="post" action="/contact" class="mt-6 grid gap-4" aria-label="Professional inquiry form">
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="pro-name">NAME</label>
+                      <input
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                        id="pro-name"
+                        name="name"
+                        autocomplete="name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="pro-email">EMAIL</label>
+                      <input
+                        class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                        id="pro-email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="pro-organisation">INSTITUTION / PUBLICATION</label>
+                    <input
+                      class="mt-2 w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                      id="pro-organisation"
+                      name="organisation"
+                      placeholder="Museum, gallery, university, or press outlet"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-xs tracking-[0.35em] text-zinc-300/70" for="pro-message">OUTLINE</label>
+                    <textarea
+                      class="mt-2 min-h-[140px] w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-500 focus:border-lux-gold/60"
+                      id="pro-message"
+                      name="message"
+                      required
+                      placeholder="Share details on your proposal, timelines, and how you imagine the collaboration unfolding."
+                    ></textarea>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <button class="btn-primary" type="submit">Send professional inquiry</button>
+                    <p class="text-xs text-zinc-300/70">We aim to respond thoughtfully, not hurriedly.</p>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+
+          <aside class="lg:col-span-5 reveal" aria-label="Contact details">
+            <div class="rounded-2xl border border-white/10 bg-black/30 p-7">
+              <p class="text-xs tracking-[0.35em] text-zinc-300/70">DETAILS</p>
+              <dl class="mt-5 grid gap-5 text-sm text-zinc-200/85">
+                <div>
+                  <dt class="text-zinc-300/70">Studio Inquiries</dt>
+                  <dd class="mt-1 text-zinc-50"><a class="text-zinc-200" href="mailto:studio@atelierstella.com">studio@atelierstella.com</a></dd>
+                </div>
+                <div>
+                  <dt class="text-zinc-300/70">Curatorial Office</dt>
+                  <dd class="mt-1 text-zinc-50"><a class="text-zinc-200" href="mailto:curator@atelierstella.com">curator@atelierstella.com</a></dd>
+                </div>
+                <div>
+                  <dt class="text-zinc-300/70">Response time</dt>
+                  <dd class="mt-1 text-zinc-50">1–2 business days for most inquiries</dd>
+                </div>
+                <div>
+                  <dt class="text-zinc-300/70">Visiting hours</dt>
+                  <dd class="mt-1 text-zinc-50">
+                    Thursday–Sunday, 12:00–20:00 · Late-night viewings during select exhibitions.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-zinc-300/70">Accessibility</dt>
+                  <dd class="mt-1 text-zinc-50">
+                    Step-free access, seating throughout the galleries, and quiet hours available on request.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+        <% } %>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+
